@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import RestaurantModel from "./model.js";
+
 dotenv.config();
 
 const app = express();
@@ -17,12 +18,17 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
 
 app.get("/read", async (req, res) => {
   try {
-    const restaurant = await RestaurantModel.find().limit(200);
+    const restaurant = await RestaurantModel.find({
+      name: "Riviera Caterer",
+    }).limit(100);
     res.json(restaurant);
-    // res.send("this is a lot of data");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+});
+
+app.post("/post", (req, res) => {
+  console.log(req.body);
 });
 
 app.listen(PORT, () => {
