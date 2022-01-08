@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import RestaurantModel from "./model.js";
+import { router } from "./routes/restaurant.js";
 
 dotenv.config();
 
@@ -16,20 +17,8 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
   useUnifiedTopology: true,
 });
 
-app.get("/read", async (req, res) => {
-  try {
-    const restaurant = await RestaurantModel.find({
-      name: "Riviera Caterer",
-    }).limit(100);
-    res.json(restaurant);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-app.post("/post", (req, res) => {
-  console.log(req.body);
-});
+const restaurantRoute = router;
+app.use("/", restaurantRoute);
 
 app.listen(PORT, () => {
   console.log(`The server is running on port ${PORT}`);
