@@ -8,7 +8,7 @@ const router = express.Router();
  * @swagger
  * tags:
  *   name: Restaurants
- *   description: The books managing API
+ *   description: The New York City Restaurants API
  */
 
 /**
@@ -16,7 +16,7 @@ const router = express.Router();
  * /read:
  *   get:
  *     description: All Restaurants
- *     summary: Returns the list of all the books
+ *     summary: Returns the list of all restaurants
  *     tags: [Restaurants]
  *     responses:
  *       200:
@@ -45,7 +45,7 @@ router.get("/read", async (req, res) => {
  *        type: string
  *        description: The restaurant Id.
  *     description: Get a restaurant by id
- *     summary: Returns the list of all the books
+ *     summary: Returns specific restaurants by id
  *     tags: [Restaurants]
  *     responses:
  *       200:
@@ -96,7 +96,7 @@ router.get("/read/:restuarantId", async (req, res) => {
  *         description: Created
  *       501:
  *         description: Error Message
- *     summary: Returns the list of all the books
+ *     summary: Post a restaurant
  *     tags: [Restaurants]
  */
 
@@ -144,7 +144,7 @@ router.post("/post", async (req, res) => {
  *         description: Restaurant updated
  *       500:
  *         description: Error message
- *     summary: Returns the list of all the books
+ *     summary: Update a restaurant
  *     tags: [Restaurants]
  */
 
@@ -171,7 +171,7 @@ router.patch("/read/:restaurantId", async (req, res) => {
  *        type: string
  *        description: The restaurant Id.
  *     description: Delete a restaurant by id
- *     summary: Returns the list of all the books
+ *     summary: Delete a restaurant
  *     tags: [Restaurants]
  *     responses:
  *       200:
