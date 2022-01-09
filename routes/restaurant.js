@@ -6,9 +6,18 @@ const router = express.Router();
 
 /**
  * @swagger
+ * tags:
+ *   name: Restaurants
+ *   description: The books managing API
+ */
+
+/**
+ * @swagger
  * /read:
  *   get:
  *     description: All Restaurants
+ *     summary: Returns the list of all the books
+ *     tags: [Restaurants]
  *     responses:
  *       200:
  *         description: Returns all the catachphrases
@@ -36,6 +45,8 @@ router.get("/read", async (req, res) => {
  *        type: string
  *        description: The restaurant Id.
  *     description: Get a restaurant by id
+ *     summary: Returns the list of all the books
+ *     tags: [Restaurants]
  *     responses:
  *       200:
  *         description: Returns the requested restaurant
@@ -85,6 +96,8 @@ router.get("/read/:restuarantId", async (req, res) => {
  *         description: Created
  *       501:
  *         description: Error Message
+ *     summary: Returns the list of all the books
+ *     tags: [Restaurants]
  */
 
 router.post("/post", async (req, res) => {
@@ -131,6 +144,8 @@ router.post("/post", async (req, res) => {
  *         description: Restaurant updated
  *       500:
  *         description: Error message
+ *     summary: Returns the list of all the books
+ *     tags: [Restaurants]
  */
 
 router.patch("/read/:restaurantId", async (req, res) => {
@@ -156,6 +171,8 @@ router.patch("/read/:restaurantId", async (req, res) => {
  *        type: string
  *        description: The restaurant Id.
  *     description: Delete a restaurant by id
+ *     summary: Returns the list of all the books
+ *     tags: [Restaurants]
  *     responses:
  *       200:
  *         description: Restaurant updated
