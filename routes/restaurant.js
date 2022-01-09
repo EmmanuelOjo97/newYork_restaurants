@@ -104,25 +104,72 @@ router.post("/post", async (req, res) => {
   }
 });
 
-router.delete("/:restaurantId", async (req, res) => {
-  try {
-    const deleteRestaurant = await RestaurantModel.remove({
-      _id: req.params.restaurantId,
-    });
-    console.log("Item deleted");
-    res.send("Item Deleted");
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+/**
+ * @swagger
+ * /read/{restaurantId}:
+ *   patch:
+ *     parameters:
+ *      - in: path
+ *        name: restaurantId
+ *        required: true
+ *        type: string
+ *        description: The restaurant ID.
+ *      - in: body
+ *        name: restaurant
+ *        description: Update restaurant
+ *        schema:
+ *          type: object
+ *          properties:
+ *            name:
+ *              type: string
+ *            cuisine:
+ *              type: string
+ *            borough:
+ *              type: string
+ *     responses:
+ *       201:
+ *         description: Restaurant updated
+ *       500:
+ *         description: Error message
+ */
 
-router.patch("/:restaurantId", async (req, res) => {
+router.patch("/read/:restaurantId", async (req, res) => {
   try {
     const updatedRestaurant = await RestaurantModel.findByIdAndUpdate(
       req.params.restaurantId,
       { name: req.body.name }
     );
     res.send("Item updated");
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+/**
+ * @swagger
+ * /delete/{restaurantId}:
+ *   delete:
+ *     parameters:
+ *      - in: path
+ *        name: restaurantId
+ *        required: true
+ *        type: string
+ *        description: The restaurant Id.
+ *     description: Delete a restaurant by id
+ *     responses:
+ *       200:
+ *         description: Restaurant updated
+ *       500:
+ *         description: Error message
+ */
+
+router.delete("/delete/:restaurantId", async (req, res) => {
+  try {
+    const deleteRestaurant = await RestaurantModel.remove({
+      _id: req.params.restaurantId,
+    });
+    console.log("Item deleted");
+    res.send("Item Deleted");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
