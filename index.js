@@ -48,15 +48,6 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
 const restaurantRoute = router;
 app.use("/", restaurantRoute);
 
-// app.get("/", (req, res) => {
-//   res.send([
-//     {
-//       id: 1,
-//       title: "Harry Potter",
-//     },
-//   ]);
-// });
-
 app.listen(PORT, () => {
   console.log(`The server is running on port ${PORT}`);
 });
