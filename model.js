@@ -13,22 +13,19 @@ const restaurantsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  //   longitude: {
-  //     type: Number,
-  //     required: true,
-  //     min: -180,
-  //     max: 180,
-  //   },
-  //   latitude: {
-  //     type: Number,
-  //     required: true,
-  //     min: -90,
-  //     max: 90,
-  //   },
-  //   zipcode: {
-  //     type: Number,
-  //     required: true,
-  //   },
+  // longitude: {
+  //   type: Number,
+  //   min: -180,
+  //   max: 180,
+  // },
+  // latitude: {
+  //   type: Number,
+  //   min: -90,
+  //   max: 90,
+  // },
+  // zipcode: {
+  //   type: Number,
+  // },
 });
 
 const RestaurantModel = mongoose.model("restaurants", restaurantsSchema);

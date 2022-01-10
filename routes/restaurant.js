@@ -106,9 +106,9 @@ router.post("/post", async (req, res) => {
       name: req.body.name,
       borough: req.body.borough,
       cuisine: req.body.cuisine,
-      //   zipcode: req.body.zipcode,
-      //   longitude: req.body.longitude,
-      //   latitude: req.body.latitude,
+      zipcode: req.body.zipcode,
+      longitude: req.body.longitude,
+      latitude: req.body.latitude,
     });
     console.log(restaurants);
     restaurants.save();
