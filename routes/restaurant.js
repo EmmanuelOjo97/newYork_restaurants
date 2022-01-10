@@ -20,7 +20,7 @@ const router = express.Router();
  *     tags: [Restaurants]
  *     responses:
  *       200:
- *         description: Returns all the catachphrases
+ *         description: Returns all the restaurants
  *       501:
  *         description: Error Message
  */
