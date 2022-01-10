@@ -6,7 +6,6 @@ import RestaurantModel from "./model.js";
 import { router } from "./routes/restaurant.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "swagger-jsdoc";
-// import {} from "./routes/restaurant.js"
 
 dotenv.config();
 const app = express();
@@ -20,7 +19,7 @@ const swaggerOptions = {
     info: {
       title: "New York City Restaurants",
       description:
-        "A REST API built using Node, Express and Mongodb of New york City restaurants.",
+        "A REST API built using Node, Express and Mongodb of New york City restaurants.  Check out the code on [GitHub](https://github.com/EmmanuelOjo97/newYork_restaurants).",
     },
   },
   apis: ["./routes/restaurant.js"],
