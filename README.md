@@ -10,7 +10,7 @@ This App can be run locallaly by cloning the repository with the following comma
  
  npm install
  
- npm start
+ node/nodemon index.js
  
  # Project
 A REST API of New York City restaurants built using node.js, express, swagger and mongoDB sample data hosted on heroku.
